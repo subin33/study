@@ -17,9 +17,46 @@
       color: #222;
       text-decoration: none;
     }
+    .gnb{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 50px;
+    }
+    .gnb a {
+      display: block;
+      font-size: 40px;
+      margin: 30px 0;
+      transition: 0.5s;
+    }
+    /* 순서를 주의 gnb에 opacity 를 0.3 으로 한 후에 a 태그에 hover 할때 opacuty 를 1로 변경하는것이기 때문 */
+    .gnb:hover a {
+      opacity: 0.3;
+    }
+    .gnb a:hover {
+      opacity: 1;
+    }
+    /* before after 를 사용할 때는 기본적으로 content 로 시작해야한다. */
+    .gnb a:before {
+      content: '➡️';
+      margin-right: 10px;
+      opacity: 0;
+    }
+
+    .gnb a:hover:before {
+     opacity: 1; 
+    }
    </style>
   </head>
 <body>
-  
+  <!-- Global Navigation Bar -->
+  <!-- 보통 네이게이션을 global navigation bar 로 gnb 혹은 lnb local navigation bar 라고 부름 -->
+  <div class="gnb">
+    <a href="#none">New Arrivals</a>
+    <a href="#none">Summer Collection</a>
+    <a href="#none">Winter Collection</a>
+    <a href="#none">Special Offers</a>
+    <a href="#none">Tredns</a>
+  </div>
 </body>
 </html>
