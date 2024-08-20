@@ -2,10 +2,108 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Practical_Web_Design_Using Hover_Effects</title>
-    <link rel="stylesheet" href="../style/Hover_Effects_1.css">
+    <title>Practical_Web_Design_Using Hover_Effects_1</title>
+    <style>
+      /* Google Web Fonts CDN */
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+        color: #222;
+        line-height: 1.5em;
+        font-weight: 300;
+        margin: 0;
+        margin: 0;
+      }
+      /* a tag는 body tag 를 따르지 않는다 */
+      a{
+        color: #222;
+        text-decoration: none;
+      }
+     .items {
+      text-align: center;
+     }
+     .item {
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+      border: 1px solid #ddd;
+      position: relative;
+      margin: 10px;
+     }
+     .caption {
+      width: 300px;
+      height: 300px;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      padding-top: 40px;
+      /* display: none; 으로 안보이게 할수있지만 이때는 transition 을 주질 못한다. 그래서opacity: 0 으로 한다.  */
+      opacity: 0;
+      transition: 0.5s;
+     }
+     .caption a {
+      color: #fff;
+      background-color: teal;
+      padding: 7px;
+      border-radius: 3px;
+     }
+     .caption a:hover {
+      background-color: #fff;
+      color: #222;
+     }
+     .item:hover .caption {
+      opacity: 1;
+     }
+    </style>
   </head>
-<body>
-  
-</body>
+  <body>
+
+    <div class="items">
+      <div class="item">
+        <img src="../images/product-01.png" alt="">
+        <div class="caption">
+          <h2>Rirakuma doll 25cm</h2>
+          <p>
+            The owner of the most popular and cute looks Rilakuma ~! Rilakumagiant - It is size sale to small size.
+          </p>
+          <p>
+            Price : <s>$12</s> -> $10
+          </p>
+          <a href=""#none>View Details</a>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../images/product-02.png" alt="">
+        <div class="caption">
+          <h2>Rirakuma doll 25cm</h2>
+          <p>
+            The owner of the most popular and cute looks Rilakuma ~! Rilakumagiant - It is size sale to small size.
+          </p>
+          <p>
+            Price : <s>$12</s> -> $10
+          </p>
+          <a href=""#none>View Details</a>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../images/product-03.png" alt="">
+        <div class="caption">
+          <h2>Rirakuma doll 25cm</h2>
+          <p>
+            The owner of the most popular and cute looks Rilakuma ~! Rilakumagiant - It is size sale to small size.
+          </p>
+          <p>
+            Price : <s>$12</s> -> $10
+          </p>
+          <a href=""#none>View Details</a>
+        </div>
+      </div>
+    </div>
+
+  </body>
 </html>
