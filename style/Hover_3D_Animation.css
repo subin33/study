@@ -1,0 +1,63 @@
+body {
+  color: #222;
+  line-height: 1.5em;
+  font-weight: 300;
+  margin: 0;
+
+  /* 2. display : flex 를 사용하는 방법 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+a{
+  color: #222;
+  text-decoration: none;
+}
+/* 어떤 요소를 수직, 수평 정중앙에 오게 하는 방법은 2가지가 있다 position을 사용하는 방법과 flex 를 사용하는 방법이 있다 */
+
+/* 1. position  */
+/* .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% ,-50%);
+} */
+
+.app-ui{
+  /* border: 1px solid red; */
+  width: 340px;
+  height: 640px;
+  /* skewX 대각선으로 기울이기  rotate 기울이기 */
+  transform: rotate(-30deg) skewX(20deg);
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+  background-color: #eee;
+}
+.app-ui:hover {
+  box-shadow: -50px 100px 60px rgba(0, 0, 0, 0.3);
+}
+.app-ui img {
+  position: absolute;
+  transition: 0.5s;
+}
+
+/* app-ui에 마우스를 올리면 그 자식인 img의 첫번째 요소를 어떻게 할거야 */
+.app-ui:hover img:nth-child(1){
+  /*translate 는 x,y 모두 적어줘야함  */
+  transform: translate(40px, -40px);
+  opacity: 0.2;
+}
+.app-ui:hover img:nth-child(2){
+  transform: translate(80px, -80px);
+  opacity: 0.4;
+}
+.app-ui:hover img:nth-child(3){
+  transform: translate(120px, -120px);
+  opacity: 0.6;
+}
+.app-ui:hover img:nth-child(4){
+  transform: translate(160px, -160px);
+}
