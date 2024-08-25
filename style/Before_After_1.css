@@ -1,0 +1,47 @@
+body {
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+a{
+  text-decoration: none;
+  color: #222;
+}
+
+.gnb a {
+
+}
+/* before, after 는 기본적으로 inline 요소이다. 
+in */
+.gnb a:before {
+  content: '01';
+  background-color: royalblue;
+  color: #fff;
+  /* inline 요소이기때문에, 크기 값을 가질수없어아무리 width, height 을 넣어도 크기가 변하지 않는다. 이때 , display: inline-block 을 넣어주어 사용할 수가 있다. 무조건 display: inline-block 를 넣는게 아님!  */
+  width: 20px;
+  height: 20px;
+  /* 줄이 안바뀌면서 크기 값을 가질 수 있는 */
+  display: inline-block;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+  font-size: 12px;
+}
+.gnb a:after {
+  content: 'update';
+  font-size: 12px;
+  background-color: crimson;
+  color: #fff;
+  /*inline 요소이기 때문에 margin-lefte, margin-right 는 줄수있지만
+  margin-top , bottom 은 줄수없다 */
+  margin-left: 5px;
+  padding: 2px;
+  border-radius: 3px;
+}
