@@ -1,0 +1,64 @@
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+body{
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  /*  background-color는 단일 색상만 가능, linear-gradient는 그라데이션 생성 함수, 90deg는 그라데이션 방향, 시작 색, 끝 색  
+  height 값을 주어야함*/
+  background: linear-gradient(180deg, #DCE35B, #45B649);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a{
+  text-decoration: none;
+  color: #222;
+}
+
+.gnb{
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  padding-bottom: 10px;
+}
+.gnb a {
+  /* border: 1px solid red; */
+  width: 80px;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  position: relative;
+  /* overflow: hidden 는 해당 영역을 벗어난 것은 숨기기를 한다.  */
+  overflow: hidden;
+}
+.gnb a span{
+  /* position: absolute 를 줬는데 또 display: inline-block; 나 inline이나block  를 주는건 노우 ! absolute 를 주면 자동으로   display: inline-block;을 가지게됨*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+.gnb a span:nth-child(1){
+  top:0;
+  left: 0;
+}
+.gnb a span:nth-child(2){
+  top: 100%;
+  left: 0;
+  color: #45B649;
+}
+
+/* - (마이너스) 는 위로, 왼쪽
+   + (플러스) 는 아래, 오른쪽 */
+.gnb a:hover span:nth-child(1){
+  top: -100%;
+
+}
+.gnb a:hover span:nth-child(2){
+  top: 0;
+}
