@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+body {
+  /* font-family: 'Noto Sans KR', sans-serif; */
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+a{
+  text-decoration: none;
+  color: #222;
+}
+
+.gnb,
+.gnb2,
+.gnb3,
+.gnb4 {
+  padding-top: 10%;
+}
+.gnb a,
+.gnb2 a,
+.gnb3 a,
+.gnb4 a {
+  position: relative;
+  padding-bottom: 5px;
+}
+
+
+.gnb a:before{
+  content: '';
+  /* position: absolute 를 없애면 height 와 width 가 안먹을 것이다. 왜냐하면, before 는 inline 요소로 크기 값을 가질 수 없기 때문이다. 하지만 position: absolute를 주게 되면 inline-block 으로 변경되어 크기 값을 가질 수 있게 된다. */
+  position: absolute;
+  background-color: crimson;
+  height: 1px;
+  width: 0;
+  bottom: 0;
+  transition: 0.3s;
+  /* right: 0; 를 넣으면 오른쪽 부터  */
+  left: 0;
+}
+
+.gnb a:hover:before{
+  width: 100%;
+}
+
+
+.gnb2 a:before{
+  content: '';
+  /* position: absolute 를 없애면 height 와 width 가 안먹을 것이다. 왜냐하면, before 는 inline 요소로 크기 값을 가질 수 없기 때문이다. 하지만 position: absolute를 주게 되면 inline-block 으로 변경되어 크기 값을 가질 수 있게 된다. */
+  position: absolute;
+  background-color: crimson;
+  height: 4px;
+  width: 4px;
+  bottom: 0;
+  transition: 0.3s;
+  /* right: 0; 를 넣으면 오른쪽 부터  */
+  left: 0;
+}
+
+.gnb2 a:hover:before{
+  /* width: 100%; */
+  /* left: 100%; */
+  left: calc(100% - 4px);
+}
+
+
+.gnb3 a:before{
+  content: '';
+  position: absolute;
+  background-color: crimson;
+  height: 1px;
+  width: 5px;
+  bottom: 0;
+  transition: 0.3s;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gnb3 a:hover:before{
+  width: 100%;
+}
+
+.gnb4 a:before{
+  content: '';
+  position: absolute;
+  background-color: crimson;
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  transition: 0.3s;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gnb4 a:hover:before{
+  width: 0;
+}
+
+   
+
+
+
+
