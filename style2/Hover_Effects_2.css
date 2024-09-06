@@ -35,7 +35,6 @@ a{
   }
 
 .icon span {
-  /* position : absolute 를 주는 순간에 inline-block으로 변경이 된다.  */
   position: absolute;  
   background-color: #000;
   color: #fff;
