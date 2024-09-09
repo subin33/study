@@ -1,0 +1,51 @@
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+body{
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+a{
+  text-decoration: none;
+}
+
+form input[type=checkbox]{
+  display: none;
+}
+form label{
+  display: block;
+}
+
+form label::before{
+  content: '\f00c';
+  font-family: fontawesome;
+  border: 1px solid #333;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  margin-right: 5px;
+  font-size: 13px;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  line-height: 14px;
+  color: transparent;
+  transition: 0.3s;
+}
+
+form input[type=checkbox]:checked + label::before
+{
+  background-color: crimson;
+  color: #fff;
+  /*  border를 없애고 싶어서  border:none 을 주게되면, border가 1px 씩 차지하고 있어, 크기가 왔다갔다한다. 이때, border-color: transparent로 투명하게 로 변경하는 것이 좋다.  */
+ border-color: transparent;
+}
+
+form input[type=checkbox] + label:active::before{
+  transform: scale(0);
+}
