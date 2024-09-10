@@ -9,8 +9,8 @@
   </head>
 <body>
   <button class="btn-open">뉴스레터 구독하기</button>
-  <div class="model">
-    <div class="model-content">
+  <div class="modal">
+    <div class="modal-content">
       <div class="photo"></div>
       <div class="desc">
         <div class="desc-header">
@@ -31,11 +31,15 @@
   <div class="overlay"></div>
 
   <script>
+    //Open Modal with Page Loadging
+    $('.modal, .overlay').addClass('active') /*페이지가 열리면서 모달 오픈*/
+
+    //Open Modal with Click
     $('.btn-open').click(()=> {
-      $('.model, .overlay').addClass('active')
+      $('.modal, .overlay').addClass('active')
     })
     $('.btn-close, .overlay').click(()=> {
-      $('.model, .overlay').removeClass('active')
+      $('.modal, .overlay').removeClass('active')
     })
   </script>
 </body>
