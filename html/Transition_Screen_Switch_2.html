@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Adding images to the jQuery front-back transition screen switch</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="../style/Transition_Screen_Switch_2.css">
+  </head>
+<body>
+
+  <div class="container">
+    <div class="open-navi">
+      <i class="xi-arrow-right"></i>
+    </div>
+    <div class="close-navi">
+      <i class="xi-arrow-left"></i>
+    </div>
+    <div class="front">
+     <img src="../images/temp-image-01.jpg">
+    </div>
+    <div class="back">
+      <img src="../images/temp-image-02.jpg">
+    </div>
+  </div>
+
+  <script>
+    // $(this).addClass('active'); 를 사용하려면 function 을 사용해야함 => 화살표함수를 사용하고 싶다면, 
+    // $('.open-navi').click((e) => {
+    //   $(e.target).addClass('active');
+    // }); 다음과 같은 형태로 사용해야함
+
+    $('.open-navi').click(function() {
+      $(this).addClass('active');
+      $('.close-navi').addClass('active');
+      $('.front').fadeOut()
+      $('.back').fadeIn()
+    });
+
+    $('.close-navi').click(function() {
+      $(this).removeClass('active');
+      $('.open-navi').removeClass('active');
+      $('.back').fadeOut()
+      $('.front').fadeIn()
+    });
+
+  </script>
+
+</body>
+</html>
