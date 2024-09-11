@@ -1,0 +1,226 @@
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+/* box-sizing: border-box; 를 넣게 되면 width,height,콘텐츠,패딩,border 를 모두 포함하는 크기로 설정된다. 그래서 레이아웃을 더 쉽게  관리 할 수 있다.  콘텐츠,패딩,border로 인해 요소의 width,height 큭기가 커지지 않도록 유지하기 위한것*/
+*{
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body{
+  font-size: 14px;
+  background-color: #F5F6F7;
+  line-height: 1.5em;
+  color: #222;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+a{
+  text-decoration: none;
+  color: #222;
+}
+
+/* Reset CSS */
+input,select{
+  cursor: pointer;
+}
+
+/* Member Sign in */
+.member{
+  width: 460px;
+  /* margin: auto; 수평 여백을 자동으로 설정하여, 부모 요소 안에서 해당 요소가 수평으로 중앙에 배치되도록 해준다. */
+  margin: auto;
+  padding: 0 20px;
+
+}
+
+.member .logo {
+  display: block;
+  margin: 50px auto;
+}
+
+.field{
+  /* border: 1px solid #000; */
+  margin: 5px 0;
+}
+
+.field b{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+/* not 이라는 가상 클래스를 이용해 input 타입이 radio 만 제외하고 */
+.member input:not(input[type=radio]),
+.member select {
+  border: 1px solid #dadada;
+  padding: 15px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.member input[type=button],
+.member input[type=submit]{
+  background-color: #2DB400;
+  color: #fff;
+}
+
+
+.member input:not(input[type=radio]):focus,
+.member select:focus {
+  border: 1px solid #2db400;
+}
+
+.field.birth div {
+  display: flex;
+  gap: 10px;
+}
+
+.field.phone-number div{
+  display: flex;
+  gap: 10px;
+  margin: 5px 0;
+}
+.field.phone-number div input:nth-child(1){
+  flex:2;
+}
+
+.field.phone-number div input:nth-child(2){
+  flex:1;
+}
+
+.field.gender div {
+  border:1px solid #dadada;
+  background-color: #fff;
+  padding: 15px 5px;
+}
+.placeholder-text{
+  /* border: 1px solid red; */
+  display: block;
+  position: relative;
+}
+
+.placeholder-text::before{
+  content: '@naver.com';
+  position: absolute;
+  right: 20px;
+  top:13px;
+  /*pointer-events: none; 으로 마우스 이벤트를 안받게 해줘야, 사용자가 해당 영역을 클릭했을때도 span 영역이 잘 눌린다. */
+  pointer-events: none;
+}
+
+.userpw {
+  background:#fff url(../images/naver/icon-01.png) no-repeat center right 10px;
+  background-size: 20px;
+}
+
+.userpw-confirm {
+  background:#fff url(../images/naver/icon-02.png) no-repeat center right 10px;
+  background-size: 20px;
+}
+
+.member-footer {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 20px;
+}
+.member-footer div a:nth-child(2) {
+  font-weight: 500;
+}
+.member-footer a:hover {
+  text-decoration: underline;
+  color: #2DB400;
+}
+/* 
+방법 1) 
+.member-footer div a{
+  margin-right: 10px;
+  border-right: 1px solid #bbb;
+  padding-right: 10px;
+}
+
+.member-footer div a:last-child{
+  border:none;
+  margin: 0;
+} 
+*/
+
+/* 방법 2) 좀 더 정교함 */
+.member-footer div a::after{
+  content: '|';
+  font-size: 10px;
+  color: #bbb;
+  margin-right: 5px;
+  padding-left: 7px;
+  /* display: inline-block; 을 쓴 이유는 inline 요소여서 inline 요소는 transform 을 사용할 수 없기 때문이다. */
+  display: inline-block;
+  transform: translateY(-2px);
+}
+.member-footer div a:last-child::after{
+  display: none;
+}
+
+.member-footer div a:last-child{
+  border:none;
+  margin: 0;
+} 
+
+/* Checked Radio Button */
+.field.gender input[name=gender]{
+  display: none;
+}
+.field.gender label{
+  cursor: pointer;
+  margin-right: 7px;
+}
+.field.gender label em{
+  /* border: 1px solid red; */
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 3px;
+  /* 정렬 방법 1) */
+  transform: translateY(3px);
+  /* 정렬 방법 2) */
+  /* vertical-align: middle;
+  margin-top: -2px; */
+  background: url(../images/naver/icon-radio.png) no-repeat;
+  background-position: left;
+}
+.field.gender input[name=gender]:checked + em{
+  background-position: right;
+}
+
+/* Custom Select & Number */
+select{
+  /* 
+  -webkit-appearance: none; -> 크롬, 사파리
+  -moz-appearance: none; -> 파이어폭스
+  appearance: none; -> 최신 표준으로 대부분의 브라우저
+  브라우저가 기본적으로 제공하는 특정 UI 스타일을 제거하는 코드,  
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff url(../images/naver/icon-select.png) no-repeat center right 20px;
+}
+
+
+/* start -> input type number 일 경우 오른쪽에 생기는 위아래 버튼을 삭제해주는 코드,  */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* end */
+
+@media(max-width:768px){
+  .member{
+    width: 100%;
+  }
+}
